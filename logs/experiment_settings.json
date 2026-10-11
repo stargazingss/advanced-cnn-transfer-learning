@@ -1,0 +1,46 @@
+{
+  "seed": 42,
+  "device": "cuda",
+  "dataset": "Oxford-IIIT Pet",
+  "classes": [
+    "Abyssinian",
+    "Bengal",
+    "Birman",
+    "Persian",
+    "Siamese",
+    "Beagle",
+    "Boxer",
+    "Chihuahua",
+    "Pug",
+    "Shiba Inu"
+  ],
+  "number_of_classes": 10,
+  "split": "Stratified 70/15/15 split from the combined official trainval and test sets",
+  "split_sizes": {
+    "train": 1397,
+    "validation": 299,
+    "test": 300
+  },
+  "input_size": "224x224",
+  "batch_size": 32,
+  "optimizer": "AdamW",
+  "loss": "CrossEntropyLoss",
+  "max_epochs": 20,
+  "early_stopping_patience": 4,
+  "pretrained_weights": {
+    "B1": null,
+    "B2-B4": "ResNet18_Weights.IMAGENET1K_V1",
+    "B5": "EfficientNet_B0_Weights.IMAGENET1K_V1"
+  },
+  "strategies": {
+    "B1": "ResNet18 trained from scratch",
+    "B2": "ResNet18 feature extraction",
+    "B3": "ResNet18 progressive fine-tuning",
+    "B4a": "ResNet18 feature extraction without augmentation",
+    "B4b": "ResNet18 feature extraction with augmentation",
+    "B5": "EfficientNet-B0 feature extraction, no augmentation"
+  },
+  "b5_strategy": "Feature Extraction, No Augmentation",
+  "b5_reference_experiment": "B4a",
+  "test_evaluation": "Internal test split; not the untouched official Oxford-IIIT Pet test split"
+}

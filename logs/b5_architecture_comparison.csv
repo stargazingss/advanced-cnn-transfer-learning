@@ -1,0 +1,3 @@
+Model,Total Parameters,Trainable Parameters,Test Macro F1,Training Time (s)
+"B4a - ResNet18 Feature Extraction, No Augmentation",11181642,5130,0.9600689369634055,183.25510025024414
+B5 - EfficientNet-B0,4020358,12810,0.9833267542388849,185.09329438209534
